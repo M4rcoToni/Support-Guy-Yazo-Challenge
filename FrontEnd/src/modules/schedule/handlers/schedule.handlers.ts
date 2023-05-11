@@ -22,16 +22,18 @@ export const useHandleSchedule = () => {
         hour: 'numeric',
         minute: 'numeric',
       });
-
-      return {
-        day,
-        startTime,
-        endTime,
-        tags,
-        place,
-        title,
-        users: users.sort(() => 0.5 - Math.random()),
-      };
+      const scheduleCard : ScheduleCardProps = {
+        data:{
+          day,
+          startTime,
+          endTime,
+          tags,
+          place,
+          title,
+          users: users.sort(() => 0.5 - Math.random()),
+        }
+      }
+      return scheduleCard;
     },
     []
   );
